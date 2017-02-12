@@ -3,29 +3,36 @@
 <head>
   <meta charset="utf-8">
   <title>tracking.js - face with camera</title>
+<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="tracking/examples/assets/demo.css">
-  
-  <button id="maskThmb1" class="rockyThmb"> <img src="assets/rockythmb.png"> </button>
- <button id="maskThmb2" class="coltThmb"> <img src="assets/coltthmb.png"> </button>
- <button id="maskThmb3" class="tumtumThmb"> <img src="assets/tumtumthmb.png"> </button>
-    <img hidden id="mask" class="mask" src="assets/blank.png" />
- <script src="js/main.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+ <!-- Placeholder for the actual mask images that'll be used with the camera. 
+ Placing it here for DOM accessibility while hiding it so nobody knows how 
+ bad I am at this. -->
+    <img hidden id="mask1" class="mask" src="assets/blank.png" />
+    <img hidden id="mask2" class="mask" src="assets/blank.png" />
+    <img hidden id="mask3" class="mask" src="assets/blank.png" />
+  <script src="js/main.js"></script>
   <script src="tracking/build/tracking-min.js"></script>
   <script src="tracking/build/data/face-min.js"></script>
-   <script src="tracking/node_modules/dat.gui.min.js"></script>
+  <script src="tracking/node_modules/dat.gui.min.js"></script>
   <script src="tracking/examples/assets/stats.min.js"></script>
 
   <style>
-  video, canvas {
+  video, canvas, div#buttons {
     margin-left: 230px;
     margin-top: 120px;
     position: absolute;
-  }
 
+  }
   </style>
+
 </head>
 <body>
+
   <div class="demo-title">
   </div>
 
@@ -35,7 +42,16 @@
       <canvas id="canvas" width="640" height="480"></canvas>
     </div>
   </div>
+  <div id="buttons" style="position: fixed; z-index: 9999;">
 
+ <!-- Mask buttons-->
 
+ <button id="maskThmb1" class="rockyThmb" style="background-color: rgba(0, 0, 0, 0);"> <img src="assets/rockythmb.png"> </button>
+ <button id="maskThmb2" class="coltThmb" style="background-color: rgba(0, 0, 0, 0);"> <img src="assets/coltthmb.png"> </button>
+ <button id="maskThmb3" class="tumtumThmb" style="background-color: rgba(0, 0, 0, 0);"> <img src="assets/tumtumthmb.png"> </button>
+</div>
+<div>
+<img style="padding-left: 33%; position: absolute;" src="assets/logo.png">
+</div>
 </body>
 </html>
